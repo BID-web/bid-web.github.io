@@ -1,0 +1,1708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LORE // BID</title>
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: #080a0c;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            width: 100%;
+            padding: 32px 50px;
+
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+
+            border-bottom: 1px solid #1d2125;
+        }
+
+
+        .brand {
+            text-decoration: none;
+            color: white;
+            line-height: 1;
+        }
+
+
+        .brand-main {
+            display: block;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 30px;
+            font-weight: 700;
+
+            letter-spacing: 7px;
+        }
+
+
+        .brand-sub {
+            display: block;
+
+            margin-top: 8px;
+
+            font-size: 9px;
+
+            letter-spacing: 2px;
+
+            color: #777d81;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 34px;
+            padding-top: 4px;
+        }
+
+
+        nav a {
+            position: relative;
+
+            color: #777d81;
+
+            text-decoration: none;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 9px;
+
+            letter-spacing: 2px;
+
+            transition: color 0.2s ease;
+        }
+
+
+        nav a:hover {
+            color: white;
+        }
+
+
+        nav a::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            bottom: -8px;
+
+            width: 0;
+            height: 1px;
+
+            background: #b91c1c;
+
+            transition: width 0.2s ease;
+        }
+
+
+        nav a:hover::after,
+        nav a.active::after {
+            width: 100%;
+        }
+
+
+        nav a.active {
+            color: white;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            max-width: 1400px;
+
+            margin: auto;
+
+            padding: 100px 70px 90px;
+
+            border-bottom: 1px solid #1d2125;
+        }
+
+
+        .eyebrow {
+            color: #b91c1c;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 10px;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .hero h1 {
+            margin: 0;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: clamp(50px, 7vw, 100px);
+
+            letter-spacing: 5px;
+
+            line-height: 0.95;
+        }
+
+
+        .hero-meta {
+            display: flex;
+
+            gap: 60px;
+
+            margin-top: 45px;
+
+            padding-top: 25px;
+
+            border-top: 1px solid #252a2e;
+
+            max-width: 800px;
+        }
+
+
+        .meta-item {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 7px;
+        }
+
+
+        .meta-label {
+            color: #555b60;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 8px;
+
+            letter-spacing: 2px;
+        }
+
+
+        .meta-value {
+            color: #dfe1e3;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 10px;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* =========================
+           CONTENT
+        ========================= */
+
+        .content {
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding: 90px 70px 120px;
+        }
+
+
+        .section {
+            margin-bottom: 110px;
+        }
+
+
+        .section-header {
+            display: flex;
+
+            align-items: baseline;
+
+            gap: 25px;
+
+            margin-bottom: 35px;
+
+            padding-bottom: 15px;
+
+            border-bottom: 1px solid #252a2e;
+        }
+
+
+        .section-number {
+            color: #b91c1c;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 9px;
+
+            letter-spacing: 2px;
+        }
+
+
+        .section-title {
+            margin: 0;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 21px;
+
+            letter-spacing: 3px;
+        }
+
+
+        .section p {
+            max-width: 900px;
+
+            color: #92979b;
+
+            font-size: 14px;
+
+            line-height: 2;
+
+            margin: 0 0 25px;
+        }
+
+
+        .section p strong {
+            color: #dfe1e3;
+
+            font-weight: 500;
+        }
+
+
+        /* =========================
+           QUOTE
+        ========================= */
+
+        .quote {
+            margin: 45px 0;
+
+            padding: 25px 30px;
+
+            border-left: 2px solid #b91c1c;
+
+            background: #0c0f11;
+        }
+
+
+        .quote-text {
+            color: #dfe1e3;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: clamp(15px, 2vw, 20px);
+
+            letter-spacing: 1px;
+
+            line-height: 1.7;
+        }
+
+
+        .quote-source {
+            margin-top: 15px;
+
+            color: #555b60;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 8px;
+
+            letter-spacing: 2px;
+        }
+
+
+        /* =========================
+           TIMELINE
+        ========================= */
+
+        .timeline {
+            position: relative;
+
+            margin-top: 50px;
+
+            border-left: 1px solid #30353a;
+        }
+
+
+        .timeline-item {
+            position: relative;
+
+            padding: 0 0 55px 45px;
+        }
+
+
+        .timeline-item::before {
+            content: "";
+
+            position: absolute;
+
+            left: -5px;
+
+            top: 4px;
+
+            width: 9px;
+            height: 9px;
+
+            background: #080a0c;
+
+            border: 1px solid #b91c1c;
+        }
+
+
+        .timeline-year {
+            color: #b91c1c;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 10px;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .timeline-title {
+            color: #ffffff;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 15px;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .timeline-text {
+            max-width: 800px;
+
+            color: #777d81;
+
+            font-size: 13px;
+
+            line-height: 1.9;
+        }
+
+
+        /* =========================
+           BLACK DIRECTIVE
+        ========================= */
+
+        .directive {
+            border: 1px solid #2b3035;
+
+            background: #0b0e10;
+
+            padding: 40px;
+
+            margin-top: 40px;
+        }
+
+
+        .directive-top {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding-bottom: 20px;
+
+            margin-bottom: 30px;
+
+            border-bottom: 1px solid #252a2e;
+        }
+
+
+        .directive-name {
+            color: #ffffff;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 18px;
+
+            letter-spacing: 3px;
+        }
+
+
+        .directive-classification {
+            color: #b91c1c;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 8px;
+
+            letter-spacing: 2px;
+        }
+
+
+        .directive p {
+            margin-bottom: 20px;
+        }
+
+
+        .directive-warning {
+            margin-top: 30px;
+
+            padding: 15px;
+
+            border: 1px solid #241719;
+
+            background: #100c0d;
+
+            color: #777d81;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 8px;
+
+            line-height: 1.8;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* =========================
+           STRUCTURE GRID
+        ========================= */
+
+        .structure-grid {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 10px;
+
+            margin-top: 40px;
+        }
+
+
+        .structure-card {
+            padding: 25px;
+
+            border: 1px solid #252a2e;
+
+            background: #0c0f11;
+
+            transition: border-color 0.2s ease;
+        }
+
+
+        .structure-card:hover {
+            border-color: #444a4f;
+        }
+
+
+        .structure-number {
+            color: #b91c1c;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 8px;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .structure-name {
+            color: #ffffff;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 13px;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .structure-description {
+            color: #777d81;
+
+            font-size: 11px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           LEADERSHIP
+        ========================= */
+
+        .leadership {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 20px;
+
+            margin-top: 40px;
+        }
+
+
+        .leader {
+            padding: 30px;
+
+            border-top: 1px solid #b91c1c;
+
+            background: #0c0f11;
+        }
+
+
+        .leader-role {
+            color: #b91c1c;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 8px;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .leader-name {
+            color: #ffffff;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 18px;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .leader-description {
+            color: #777d81;
+
+            font-size: 11px;
+
+            line-height: 1.9;
+        }
+
+
+        /* =========================
+           FINAL STATEMENT
+        ========================= */
+
+        .final-statement {
+            padding: 80px 0 20px;
+
+            text-align: center;
+
+            border-top: 1px solid #1d2125;
+        }
+
+
+        .final-label {
+            color: #b91c1c;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 9px;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .final-text {
+            max-width: 800px;
+
+            margin: auto;
+
+            color: #dfe1e3;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: clamp(18px, 3vw, 30px);
+
+            line-height: 1.6;
+
+            letter-spacing: 1px;
+        }
+
+
+        .final-classification {
+            margin-top: 35px;
+
+            color: #555b60;
+
+            font-size: 8px;
+
+            letter-spacing: 3px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            border-top: 1px solid #1d2125;
+
+            padding: 20px 50px;
+
+            color: #555b60;
+
+            font-size: 8px;
+
+            letter-spacing: 2px;
+        }
+
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            header {
+                padding: 25px;
+            }
+
+
+            nav {
+                gap: 15px;
+
+                flex-wrap: wrap;
+
+                justify-content: flex-end;
+            }
+
+
+            .hero {
+                padding: 80px 30px;
+            }
+
+
+            .content {
+                padding: 70px 30px 100px;
+            }
+
+
+            .hero-meta {
+                gap: 30px;
+
+                flex-wrap: wrap;
+            }
+
+
+            .structure-grid,
+            .leadership {
+                grid-template-columns: 1fr;
+            }
+
+
+            footer {
+                padding: 20px 25px;
+            }
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 550px) {
+
+            header {
+                flex-direction: column;
+
+                gap: 25px;
+            }
+
+
+            nav {
+                justify-content: flex-start;
+
+                gap: 14px;
+            }
+
+
+            .hero {
+                padding: 60px 20px;
+            }
+
+
+            .content {
+                padding: 60px 20px 80px;
+            }
+
+
+            .section {
+                margin-bottom: 80px;
+            }
+
+
+            .section-header {
+                gap: 12px;
+
+                flex-wrap: wrap;
+            }
+
+
+            .directive {
+                padding: 25px;
+            }
+
+
+            .directive-top {
+                align-items: flex-start;
+
+                flex-direction: column;
+
+                gap: 12px;
+            }
+
+
+            .timeline-item {
+                padding-left: 30px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <a href="index.html" class="brand">
+
+        <span class="brand-main">
+            BID
+        </span>
+
+        <span class="brand-sub">
+            BUREAU OF INTERNATIONAL DEFENSE
+        </span>
+
+    </a>
+
+
+    <nav>
+
+        <a href="index.html">
+            HOME
+        </a>
+
+        <a href="about.html" class="active">
+            ABOUT
+        </a>
+
+        <a href="divisions.html">
+            DIVISIONS
+        </a>
+
+        <a href="database.html">
+            DATABASE
+        </a>
+
+        <a href="locations.html">
+            LOCATIONS
+        </a>
+
+        <a href="archive.html">
+            ARCHIVE
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="eyebrow">
+        CENTRAL DATABASE // HISTORY
+    </div>
+
+
+    <h1>
+        THE BUREAU
+    </h1>
+
+
+    <div class="hero-meta">
+
+        <div class="meta-item">
+
+            <span class="meta-label">
+                ESTABLISHED
+            </span>
+
+            <span class="meta-value">
+                1976
+            </span>
+
+        </div>
+
+
+        <div class="meta-item">
+
+            <span class="meta-label">
+                CURRENT STATUS
+            </span>
+
+            <span class="meta-value">
+                ACTIVE
+            </span>
+
+        </div>
+
+
+        <div class="meta-item">
+
+            <span class="meta-label">
+                OPERATIONAL REACH
+            </span>
+
+            <span class="meta-value">
+                GLOBAL
+            </span>
+
+        </div>
+
+
+        <div class="meta-item">
+
+            <span class="meta-label">
+                PUBLIC STATUS
+            </span>
+
+            <span class="meta-value">
+                NON-EXISTENT
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     MAIN CONTENT
+========================= -->
+
+<main class="content">
+
+
+    <!-- =========================
+         ORIGIN
+    ========================= -->
+
+    <section class="section">
+
+        <div class="section-header">
+
+            <span class="section-number">
+                001
+            </span>
+
+            <h2 class="section-title">
+                ORIGIN
+            </h2>
+
+        </div>
+
+
+        <p>
+            The <strong>Bureau of International Defence</strong> was established
+            in 1976 as a British intelligence agency dedicated to protecting
+            national security and maintaining global stability.
+        </p>
+
+
+        <p>
+            The Bureau was founded by then Prime Minister
+            <strong>James Callaghan</strong> and
+            <strong>Jean Clark</strong>, an intelligence officer within MI6.
+            In its earliest years, BID operated as a conventional agency,
+            handling matters primarily within the United Kingdom.
+        </p>
+
+
+        <p>
+            That role would not last.
+        </p>
+
+
+        <div class="quote">
+
+            <div class="quote-text">
+                "Some threats cannot be handled within the boundaries
+                of conventional intelligence."
+            </div>
+
+            <div class="quote-source">
+                BID // FOUNDING DIRECTIVE
+            </div>
+
+        </div>
+
+
+        <p>
+            As intelligence warfare intensified throughout Europe and
+            tensions with the Soviet Union escalated, serious security
+            breaches began exposing weaknesses within existing intelligence
+            structures.
+        </p>
+
+
+        <p>
+            BID was increasingly tasked with dealing with threats that
+            conventional agencies could not safely approach.
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================
+         1984
+    ========================= -->
+
+    <section class="section">
+
+        <div class="section-header">
+
+            <span class="section-number">
+                002
+            </span>
+
+            <h2 class="section-title">
+                THE DISAPPEARANCE
+            </h2>
+
+        </div>
+
+
+        <p>
+            In 1984, a series of intelligence breaches and infiltration
+            operations affected agencies throughout Europe. BID was among
+            those compromised.
+        </p>
+
+
+        <p>
+            The Bureau faced a choice.
+        </p>
+
+
+        <p>
+            Rebuild publicly and risk exposing the organization again,
+            or disappear completely.
+        </p>
+
+
+        <div class="quote">
+
+            <div class="quote-text">
+                "BID did not survive by rebuilding what had been lost.
+                It survived by becoming something that could not be found."
+            </div>
+
+            <div class="quote-source">
+                INTERNAL HISTORICAL RECORD // 1984
+            </div>
+
+        </div>
+
+
+        <p>
+            Jean Clark gathered the remaining trusted personnel and
+            reorganized BID in secrecy.
+        </p>
+
+
+        <p>
+            The organization was publicly dissolved.
+            Its facilities were abandoned, its existence erased from
+            official records, and its personnel scattered into new
+            identities and positions.
+        </p>
+
+
+        <p>
+            To the public, BID was gone.
+        </p>
+
+
+        <p>
+            It wasn't.
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================
+         EXPANSION
+    ========================= -->
+
+    <section class="section">
+
+        <div class="section-header">
+
+            <span class="section-number">
+                003
+            </span>
+
+            <h2 class="section-title">
+                THE RECONSTRUCTION
+            </h2>
+
+        </div>
+
+
+        <p>
+            Following the 1984 dissolution, BID ceased operating as a
+            conventional intelligence agency and began functioning as a
+            covert organization outside the public intelligence structure.
+        </p>
+
+
+        <p>
+            Under Jean Clark's leadership, the Bureau rebuilt itself through
+            compartmentalization, secrecy, and carefully selected personnel.
+        </p>
+
+
+        <p>
+            BID gradually expanded beyond British national affairs,
+            establishing operations throughout Europe before eventually
+            developing a worldwide intelligence network.
+        </p>
+
+
+        <p>
+            By <strong>2005</strong>, BID possessed operational reach across
+            the globe.
+        </p>
+
+
+        <p>
+            The organization that emerged was fundamentally different from
+            the agency founded in 1976.
+        </p>
+
+
+        <p>
+            BID no longer needed recognition.
+        </p>
+
+
+        <p>
+            It needed results.
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================
+         TIMELINE
+    ========================= -->
+
+    <section class="section">
+
+        <div class="section-header">
+
+            <span class="section-number">
+                004
+            </span>
+
+            <h2 class="section-title">
+                KEY DATES
+            </h2>
+
+        </div>
+
+
+        <div class="timeline">
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-year">
+                    1976
+                </div>
+
+                <div class="timeline-title">
+                    FOUNDATION
+                </div>
+
+                <div class="timeline-text">
+                    The Bureau of International Defence is established
+                    by Prime Minister James Callaghan and MI6 intelligence
+                    officer Jean Clark.
+                </div>
+
+            </div>
+
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-year">
+                    1984
+                </div>
+
+                <div class="timeline-title">
+                    THE DISSOLUTION
+                </div>
+
+                <div class="timeline-text">
+                    Following widespread intelligence breaches and
+                    infiltration throughout Europe, BID publicly ceases
+                    to exist and transitions underground.
+                </div>
+
+            </div>
+
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-year">
+                    1984 — 2005
+                </div>
+
+                <div class="timeline-title">
+                    THE RECONSTRUCTION
+                </div>
+
+                <div class="timeline-text">
+                    Jean Clark leads the reconstruction of BID,
+                    transforming the former intelligence agency into
+                    a completely covert organization.
+                </div>
+
+            </div>
+
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-year">
+                    2005
+                </div>
+
+                <div class="timeline-title">
+                    GLOBAL REACH
+                </div>
+
+                <div class="timeline-text">
+                    BID expands its operational presence beyond Europe,
+                    establishing a global intelligence network.
+                </div>
+
+            </div>
+
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-year">
+                    2009
+                </div>
+
+                <div class="timeline-title">
+                    THE HART DIRECTORATE
+                </div>
+
+                <div class="timeline-text">
+                    Evelyn Hart assumes the position of Director General,
+                    succeeding Jean Clark and taking command of the
+                    modern Bureau.
+                </div>
+
+            </div>
+
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-year">
+                    2018
+                </div>
+
+                <div class="timeline-title">
+                    JEAN CLARK
+                </div>
+
+                <div class="timeline-text">
+                    Jean Clark, founder and first Director General of
+                    the underground Bureau, dies at the age of [REDACTED].
+                </div>
+
+            </div>
+
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-year">
+                    PRESENT
+                </div>
+
+                <div class="timeline-title">
+                    THE BUREAU REMAINS
+                </div>
+
+                <div class="timeline-text">
+                    BID continues to operate worldwide, almost entirely
+                    unknown to the public and to the majority of global
+                    intelligence organizations.
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         BLACK DIRECTIVE 17
+    ========================= -->
+
+    <section class="section">
+
+        <div class="section-header">
+
+            <span class="section-number">
+                005
+            </span>
+
+            <h2 class="section-title">
+                BLACK DIRECTIVE 17
+            </h2>
+
+        </div>
+
+
+        <p>
+            BID's authority is derived from a classified contingency
+            provision known as <strong>Black Directive 17</strong>.
+        </p>
+
+
+        <div class="directive">
+
+
+            <div class="directive-top">
+
+                <div class="directive-name">
+                    BLACK DIRECTIVE 17
+                </div>
+
+                <div class="directive-classification">
+                    CLEARANCE // OMEGA
+                </div>
+
+            </div>
+
+
+            <p>
+                Black Directive 17 permits BID to conduct operations
+                outside conventional legal and diplomatic frameworks
+                when national or global stability is determined to be
+                at risk.
+            </p>
+
+
+            <p>
+                Under the directive, BID possesses extraordinary
+                operational freedom. Its personnel are protected from
+                becoming conventional war criminals or international
+                fugitives as a consequence of authorized operations.
+            </p>
+
+
+            <p>
+                The Director General maintains primary operational
+                authority.
+            </p>
+
+
+            <p>
+                However, actions involving the destruction of evidence,
+                manipulation of foreign governments, or other significant
+                illegal activity require authorization from the
+                Prime Minister of the United Kingdom.
+            </p>
+
+
+            <div class="directive-warning">
+                AUTHORIZATION DOES NOT EQUAL ACCOUNTABILITY.
+                <br><br>
+                BLACK DIRECTIVE 17 REMAINS CLASSIFIED.
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         WHAT BID DOES
+    ========================= -->
+
+    <section class="section">
+
+        <div class="section-header">
+
+            <span class="section-number">
+                006
+            </span>
+
+            <h2 class="section-title">
+                THE SHADOW BUREAU
+            </h2>
+
+        </div>
+
+
+        <p>
+            BID exists to handle threats that conventional intelligence
+            organizations cannot.
+        </p>
+
+
+        <p>
+            Where agencies such as MI6 operate within diplomatic
+            boundaries, BID operates in the spaces where those boundaries
+            become an obstacle.
+        </p>
+
+
+        <div class="structure-grid">
+
+
+            <div class="structure-card">
+
+                <div class="structure-number">
+                    01 // OPERATIONS
+                </div>
+
+                <div class="structure-name">
+                    COVERT WARFARE
+                </div>
+
+                <div class="structure-description">
+                    High-risk operations conducted without public
+                    acknowledgement or diplomatic protection.
+                </div>
+
+            </div>
+
+
+
+            <div class="structure-card">
+
+                <div class="structure-number">
+                    02 // INTELLIGENCE
+                </div>
+
+                <div class="structure-name">
+                    INFILTRATION
+                </div>
+
+                <div class="structure-description">
+                    Intelligence extraction and covert penetration
+                    of hostile organizations.
+                </div>
+
+            </div>
+
+
+
+            <div class="structure-card">
+
+                <div class="structure-number">
+                    03 // CYBER
+                </div>
+
+                <div class="structure-name">
+                    CYBER WARFARE
+                </div>
+
+                <div class="structure-description">
+                    Signals intelligence, cyber operations, surveillance,
+                    and digital intelligence.
+                </div>
+
+            </div>
+
+
+
+            <div class="structure-card">
+
+                <div class="structure-number">
+                    04 // PSYOPS
+                </div>
+
+                <div class="structure-name">
+                    PSYCHOLOGICAL OPERATIONS
+                </div>
+
+                <div class="structure-description">
+                    Influence operations, narrative control,
+                    psychological warfare, and information manipulation.
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         LEADERSHIP
+    ========================= -->
+
+    <section class="section">
+
+        <div class="section-header">
+
+            <span class="section-number">
+                007
+            </span>
+
+            <h2 class="section-title">
+                LEADERSHIP
+            </h2>
+
+        </div>
+
+
+        <p>
+            BID is privately controlled, with the Director General
+            holding primary authority over the Bureau's operations.
+        </p>
+
+
+        <p>
+            The British government, specifically the sitting Prime Minister,
+            retains limited authority over matters falling under the
+            highest levels of Black Directive 17.
+        </p>
+
+
+        <div class="leadership">
+
+
+            <div class="leader">
+
+                <div class="leader-role">
+                    FIRST DIRECTOR GENERAL // 1984 — 2009
+                </div>
+
+                <div class="leader-name">
+                    JEAN CLARK
+                </div>
+
+                <div class="leader-description">
+                    Founder of BID alongside James Callaghan and the
+                    architect of its transformation into a covert
+                    organization. Clark led the Bureau through its
+                    reconstruction and expansion before passing
+                    leadership to Evelyn Hart in 2009.
+                </div>
+
+            </div>
+
+
+
+            <div class="leader">
+
+                <div class="leader-role">
+                    DIRECTOR GENERAL // 2009 — PRESENT
+                </div>
+
+                <div class="leader-name">
+                    EVELYN HART
+                </div>
+
+                <div class="leader-description">
+                    The current Director General of BID. Calm, controlled,
+                    and exceptionally perceptive, Hart maintains the
+                    Bureau's mission above personal considerations.
+                    Her authority is absolute within the limits of
+                    Black Directive 17.
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SECRECY
+    ========================= -->
+
+    <section class="section">
+
+        <div class="section-header">
+
+            <span class="section-number">
+                008
+            </span>
+
+            <h2 class="section-title">
+                THE UNKNOWN
+            </h2>
+
+        </div>
+
+
+        <p>
+            Approximately <strong>98% of personnel within other
+            intelligence organizations are unaware that BID exists.</strong>
+        </p>
+
+
+        <p>
+            The few who are aware generally know only the surface.
+            They know that something operates in the shadows.
+            They know that it is ruthless.
+            They know that it does not answer to conventional authority.
+        </p>
+
+
+        <p>
+            They do not know how large BID is.
+        </p>
+
+
+        <p>
+            They do not know where it operates.
+        </p>
+
+
+        <p>
+            And most importantly, they do not know what it is capable of.
+        </p>
+
+
+        <div class="quote">
+
+            <div class="quote-text">
+                The less the world knows about BID,
+                the safer BID — and the world — remains.
+            </div>
+
+            <div class="quote-source">
+                BUREAU OPERATIONAL PHILOSOPHY
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FINAL STATEMENT
+    ========================= -->
+
+    <section class="final-statement">
+
+        <div class="final-label">
+            END OF AUTHORIZED RECORD
+        </div>
+
+
+        <div class="final-text">
+            BID does not exist.
+            <br>
+            It never did.
+        </div>
+
+
+        <div class="final-classification">
+            IF YOU ARE READING THIS, YOU WERE NEVER SUPPOSED TO.
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    BID // INTERNAL DATABASE // EST. 1976
+
+</footer>
+
+
+</body>
+</html>
